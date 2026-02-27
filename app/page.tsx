@@ -290,23 +290,6 @@ export default function Home() {
               }}
             />
 
-            {/* Optional demo (keeps the "no location? still works" vibe) */}
-            {!filters.lat || !filters.lng ? (
-              <button
-                type="button"
-                onClick={() =>
-                  setFilters((f) => ({
-                    ...f,
-                    lat: CITY_PRESETS.LONDON.lat,
-                    lng: CITY_PRESETS.LONDON.lng,
-                    locationName: "LONDON",
-                  }))
-                }
-                className="w-full py-2 text-[10px] tracking-[0.22em] border border-foreground/30 text-foreground/80 hover:bg-foreground hover:text-background transition-colors"
-              >
-                LOAD DEMO (LONDON)
-              </button>
-            ) : null}
 
             <RadiusSlider
               value={filters.radius}
@@ -368,7 +351,7 @@ export default function Home() {
             total={total}
             loading={loading}
             error={error}
-            isMock={isMock}
+            isMock={false}
             page={page}
             onPageChange={setPage}
           />
